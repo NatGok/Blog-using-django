@@ -14,6 +14,10 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
    
+    class Meta:
+        ordering = ["-created_at"]
+    def __str__(self):
+        return f"The title of this post is {self.title}"
 
 class Comment(models.Model):
     post = models.ForeignKey(
