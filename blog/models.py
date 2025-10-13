@@ -17,7 +17,7 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_at"]
     def __str__(self):
-        return f"The title of this post is {self.title}"
+        return f"{self.title} written by {self.author}"
 
 class Comment(models.Model):
     post = models.ForeignKey(
