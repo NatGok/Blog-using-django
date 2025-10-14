@@ -4,11 +4,13 @@ from django.contrib.auth.models import User
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
+
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    author = models.ForeignKey(User, on_delete=models.CASCADE, 
+                               related_name="blog_posts")
     excerpt = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -16,8 +18,10 @@ class Post(models.Model):
    
     class Meta:
         ordering = ["-created_at"]
+
     def __str__(self):
         return f"{self.title} written by {self.author}"
+
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -30,5 +34,9 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
+
     def __str__(self):
         return f"Comment by {self.author} on {self.body}"
+    
+     
+     
