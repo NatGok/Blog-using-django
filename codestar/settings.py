@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 # Default to True locally; override with environment variable in production
 # DEBUG = os.environ.get("DEBUG", "True").lower() == "true" removed and replaced with
-DEBUG=True
+DEBUG=False
 
 ALLOWED_HOSTS = ['.herokuapp.com', "127.0.0.1", 'localhost', '127.0.0.1:8000']
 
