@@ -4,18 +4,23 @@
     {% if object_list %} {% for post in object_list %}
     <div class="col-md-4 mb-4">
       <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <p class="author text-uppercase small text-muted mb-1">
-            Author: {{ post.author }}
-          </p>
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text small text-muted">
-            {{ post.excerpt|default:post.content|truncatewords:25 }}
-          </p>
-          <p class="faded mb-0">
-            <small>{{ post.created_at|date:"M d, Y" }}</small>
-          </p>
-        </div>
+        <a
+          href="{% url 'post_detail' post.slug %}"
+          class="text-decoration-none text-dark"
+        >
+          <div class="card-body">
+            <p class="author text-uppercase small text-muted mb-1">
+              Author: {{ post.author }}
+            </p>
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text small text-muted">
+              {{ post.excerpt|default:post.content|truncatewords:25 }}
+            </p>
+            <p class="faded mb-0">
+              <small>{{ post.created_at|date:"M d, Y" }}</small>
+            </p>
+          </div>
+        </a>
       </div>
     </div>
     {% if forloop.counter|divisibleby:3 %}
