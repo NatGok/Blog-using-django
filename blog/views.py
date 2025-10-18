@@ -44,7 +44,7 @@ def post_detail(request, slug):
                 request, messages.SUCCESS,
                 'Comment submitted and awaiting approval'
             )
-    
+
     comment_form = CommentForm()
 
     return render(
@@ -84,6 +84,7 @@ def comment_edit(request, slug, comment_id):
             )
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
 def comment_delete(request, slug, comment_id):
     """

@@ -34,6 +34,10 @@ body {
   background-color: transparent;
 }
 
+.image {
+  width: 75%;
+  height: auto;
+}
 .image-container {
   position: relative;
 }

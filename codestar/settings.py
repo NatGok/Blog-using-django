@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-from django.contrib.messages import constants as messages  
+from django.contrib.messages import constants as messages
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -34,8 +34,6 @@ DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = ['.herokuapp.com', "127.0.0.1", 'localhost', '127.0.0.1:8000']
 
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -56,7 +54,6 @@ INSTALLED_APPS = [
     'cloudinary',
     'blog',
     'about',
-
 ]
 
 SITE_ID = 1
