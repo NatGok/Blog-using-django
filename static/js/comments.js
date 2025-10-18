@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
   */
   for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
-      let commentId = e.target.getAttribute("comment_id");
+      let commentId = e.target.getAttribute("data-comment_id");
       deleteConfirm.href = `delete_comment/${commentId}`;
       if (deleteModal) {
         deleteModal.show();
