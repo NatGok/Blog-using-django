@@ -15,9 +15,9 @@
       </div>
       <div class="d-none d-md-block col-md-6 masthead-image">
         {% if post.featured_image and 'placeholder' not in post.featured_image.url %}
-        <img src="{{ post.featured_image.url }}" class="scale" alt="{{ post.title }}" />
+        <img src="{{ post.featured_image.url }}" class="scale" alt="{{ post.title }}">
         {% else %}
-        <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder" />
+        <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
         {% endif %}
       </div>
     </div>
@@ -80,6 +80,7 @@
         </div>
         <!-- Our for loop ends here -->
         {% endfor %}
+      </div>
     </div>
     <!-- Creating New Comments -->
     <div class="col-md-4 card mb-4 mt-3">
