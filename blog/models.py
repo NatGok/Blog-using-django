@@ -7,6 +7,9 @@ STATUS = ((0, "Draft"), (1, "Published"))
 
 
 class Post(models.Model):
+    """
+    Display a single blog post. Referring author as the primary key :model:`auth.User`.
+    """
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     content = models.TextField()
@@ -26,6 +29,9 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    """
+    Allow comments to be displayed within each blog post. Using the foreign key relationship to link to the :model:`blog.Post` and :model:`auth.User`.
+    """
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name="comments")
     author = models.ForeignKey(

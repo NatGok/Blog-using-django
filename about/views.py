@@ -7,7 +7,16 @@ from django.contrib import messages
 # Create your views here.
 
 def about_me(request):
-    """Render the About page and handle collaboration form submissions."""
+    """
+    Render the most recent About Me page and handle collaboration form. :model:`about.About`.
+    **context**
+    'about'
+        Latest instance of :model:`about.About`.
+    'collaborate_form'
+        An instance of :model:`about.CollaborateForm`.
+    **Template:**
+    :template:`about/about.html`
+    """
 
     about = About.objects.all().order_by('-updated_on').first()
 

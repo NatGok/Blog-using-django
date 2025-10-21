@@ -154,8 +154,9 @@ USE_I18N = True
 USE_TZ = True
 
 MESSAGE_TAGS = {
-    messages.ERROR: 'alert-danger',
-    messages.SUCCESS: 'alert-success',
+    # Map to Bootstrap suffixes; template adds 'alert-' prefix
+    messages.ERROR: 'danger',
+    messages.SUCCESS: 'success',
 }
 
 # Static files (CSS, JavaScript, Images)
